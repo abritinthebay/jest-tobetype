@@ -1,4 +1,4 @@
-exports const toBeType => (received, argument) {
+export const toBeType = (received, argument) => {
 	const initialType = typeof received;
 	const type = initialType === "object" ? Array.isArray(received) ? "array" : initialType : initialType;
 	return type === argument ? {
@@ -14,7 +14,7 @@ const wrapped = {
 	toBeType
 };
 
-exports const extend(expect) => {
+export const extend = (expect) => {
 	expect.extend(wrapped);
 };
 
