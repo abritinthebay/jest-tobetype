@@ -1,6 +1,7 @@
+import getType from "jest-get-type";
+
 exports const toBeType => (received, argument) {
-	const initialType = typeof received;
-	const type = initialType === "object" ? Array.isArray(received) ? "array" : initialType : initialType;
+	const type = getType(received);
 	return type === argument ? {
 		message: () => `expected ${received} to be type ${argument}`,
 		pass: true

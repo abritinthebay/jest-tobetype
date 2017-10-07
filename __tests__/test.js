@@ -6,11 +6,22 @@ describe("testing extended expect", () => {
 		expect("").toBeType("string");
 		expect({}).toBeType("object");
 		expect(1).toBeType("number");
+		expect(false).toBeType("boolean");
+		expect(Symbol('foobar')).toBeType("symbol");
+		expect(() => {}).toBeType("function");
 	});
-	it("tests array types correctly", () => {
+	it("tests other types correctly", () => {
 		expect([]).toBeType("array");
+		expect(/foobar/).toBeType("regexp");
+		expect(new RegExp('foobar')).toBeType("regexp");
+		expect(null).toBeType("null");
+		expect(undefined).toBeType("undefined");
+		expect(new Map()).toBeType("map");
+		expect(new Set()).toBeType("set");
+		// https://github.com/facebook/jest/pull/4621
+		// expect(new Date()).toBeType("date");
 	});
 	it("works with promises", () => {
-		expect(Promise.resolve([])).resolves.toBeType("array");
+		return expect(Promise.resolve([])).resolves.toBeType("array");
 	});
 });
