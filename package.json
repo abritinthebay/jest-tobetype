@@ -30,5 +30,8 @@
   "homepage": "https://github.com/abritinthebay/jest-tobetype#readme",
   "devDependencies": {
     "jest": "^21.2.1"
+  },
+  "dependencies": {
+    "jest-matcher-utils": "^21.2.1"
   }
 }
