@@ -1,14 +1,28 @@
+const { matcherHint, printExpected, printReceived } = require('jest-matcher-utils');
 const getType = require('jest-get-type');
 
-const toBeType = (received, argument) => {
-	const type = getType(received);
-	return type === argument ? {
-		message: () => `expected ${received} to be type ${argument}`,
-		pass: true
-	} : {
-		message: () => `expected ${received} to be type ${argument}`,
-		pass: false
-	};
+const toBeType = (received, expected) => {
+	const type = getType(expected);
+	const pass = type === expected;
+	const message = pass
+		? () =>
+			matcherHint('.not.toBeType', 'value', 'type') +
+			'\n\n' +
+			`Expected value to be of type:\n` +
+			`  ${printExpected(expected)}\n` +
+			`Received:\n` +
+			`  ${printReceived(received)}\n`
+		: () =>
+			matcherHint('.toBeType', 'value', 'type') +
+			'\n\n' +
+			`Expected value to be of type:\n` +
+			`  ${printExpected(expected)}\n` +
+			`Received:\n` +
+			`  ${printReceived(received)}\n` +
+			`type:\n` +
+			`  ${printReceived(type)}`;
+
+	return { pass, message }
 };
 
 const wrapped = {

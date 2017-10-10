@@ -32,6 +32,7 @@
     "jest": "^21.2.1"
   },
   "dependencies": {
+    "jest-matcher-utils": "^21.2.1",
     "jest-get-type": "^21.2.0"
   }
 }
