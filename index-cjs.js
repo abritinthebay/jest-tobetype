@@ -2,7 +2,7 @@ const { matcherHint, printExpected, printReceived } = require('jest-matcher-util
 const getType = require('jest-get-type');
 
 const toBeType = (received, expected) => {
-	const type = getType(expected);
+	const type = getType(received);
 	const pass = type === expected;
 	const message = pass
 		? () =>
