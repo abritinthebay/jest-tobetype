@@ -1,6 +1,7 @@
+
 import getType from "jest-get-type";
 
-exports const toBeType => (received, argument) {
+exports const toBeType = (received, argument) => {
 	const type = getType(received);
 	return type === argument ? {
 		message: () => `expected ${received} to be type ${argument}`,
@@ -15,7 +16,7 @@ const wrapped = {
 	toBeType
 };
 
-exports const extend(expect) => {
+export const extend = (expect) => {
 	expect.extend(wrapped);
 };
 
