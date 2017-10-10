@@ -18,11 +18,11 @@ it("returns an array", () => {
 		.resolves.toBe("object");
 });
 ```
-It's not *hard* to write this boilerplat, but it is annoying. Strangely Jest specifically doesn't include any easy shorthand for this. 
+It's not *hard* to write this boilerplate, but it is annoying. Strangely Jest specifically doesn't include any easy shorthand for this. 
 
 Well it does now.
 
-## Instalation
+## Installation
 
 Simple install to your project like so:
 
@@ -59,7 +59,7 @@ extend(expects);
 ```
 Though that's there mostly just because.
 
-(Note: if you use the setup files make sure to extend in `setupTestFrameworkScriptFile` as extend is not available in `setupFiles`, annoyingly).
+(Note: if you use the setup files make sure to extend in `setupTestFrameworkScriptFile` as extend is not available in `setupFiles`).
 
 ## Usage
 Use it like any other matcher. For example:

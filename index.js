@@ -1,9 +1,8 @@
 import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
+import getType from "jest-get-type";
 
-export const toBeType => (received, expected) {
-	const initialType = typeof received;
-	const type = initialType === "object" ? Array.isArray(received) ? "array" : initialType : initialType;
-
+exports const toBeType = (received, argument) => {
+	const type = getType(received);
 	const pass = type === expected;
 	const message = pass
 		? () =>
@@ -30,7 +29,7 @@ const wrapped = {
 	toBeType
 };
 
-exports const extend(expect) => {
+export const extend = (expect) => {
 	expect.extend(wrapped);
 };
 
