@@ -36,7 +36,7 @@ The simplest way is:
 
 ```javascript
 import toBeType from "jest-tobetype";
-expects.extend(toBeType);
+expect.extend({toBeType});
 ```
 This is *probably* all you'll need to do if you're not doing anything special but if you want more options - read one.
 
@@ -44,7 +44,7 @@ If you have multiple extensions you are doing you may want to just import the fu
 
 ```javascript
 import {toBeType} from "jest-tobetype";
-expects.extend{
+expect.extend({
 	toBeType,
 	someOtherThing,
 	// and so on
@@ -55,11 +55,11 @@ and if you have a need for it you can also do this:
 
 ```javascript
 import {extend} from "jest-tobetype";
-extend(expects);
+extend(expect);
 ```
 Though that's there mostly just because.
 
-(Note: if you use the setup files make sure to extend in `setupTestFrameworkScriptFile` as extend is not available in `setupFiles`).
+(Note: if you use the setup files make sure to extend in `setupTestFrameworkScriptFile` as `extend` is not available in `setupFiles`).
 
 ## Usage
 Use it like any other matcher. For example:
@@ -69,6 +69,7 @@ expect("").toBeType("string");
 expect({}).toBeType("object");
 expect(1).toBeType("number");
 expect([]).toBeType("array");
+expect(() => {}).toBeType("function");
 
 // also works with Promises
 expect(Promise.resolve([])).resolves.toBeType("array");
