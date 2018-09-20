@@ -18,8 +18,7 @@ describe("testing extended expect", () => {
 		expect(undefined).toBeType("undefined");
 		expect(new Map()).toBeType("map");
 		expect(new Set()).toBeType("set");
-		// https://github.com/facebook/jest/pull/4621
-		// expect(new Date()).toBeType("date");
+		expect(new Date()).toBeType("date");
 	});
 	it("works with promises", () => {
 		return expect(Promise.resolve([])).resolves.toBeType("array");
