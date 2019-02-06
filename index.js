@@ -1,7 +1,7 @@
 import { matcherHint, printExpected, printReceived } from 'jest-matcher-utils';
 import getType from "jest-get-type";
 
-export const toBeType = (received, argument) => {
+export const toBeType = (received, expected) => {
 	const type = getType(received);
 	const pass = type === expected;
 	const message = pass
