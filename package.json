@@ -1,6 +1,6 @@
 {
   "name": "jest-tobetype",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A jest matcher that allows you to test the expected type of a value",
   "main": "index-cjs.js",
   "module": "index.js",
