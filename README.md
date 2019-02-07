@@ -36,7 +36,7 @@ The simplest way is:
 
 ```javascript
 import toBeType from "jest-tobetype";
-expect.extend({toBeType});
+expect.extend(toBeType);
 ```
 This is *probably* all you'll need to do if you're not doing anything special but if you want more options - read one.
 
