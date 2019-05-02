@@ -1,6 +1,6 @@
 {
   "name": "jest-tobetype",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A jest matcher that allows you to test the expected type of a value",
   "main": "index-cjs.js",
   "module": "index.js",
@@ -29,10 +29,10 @@
   },
   "homepage": "https://github.com/abritinthebay/jest-tobetype#readme",
   "devDependencies": {
-    "jest": "^24.0.0"
+    "jest": "^24.7.1"
   },
   "dependencies": {
-    "jest-get-type": "^24.0.0",
-    "jest-matcher-utils": "^24.0.0"
+    "jest-get-type": "^24.3.0",
+    "jest-matcher-utils": "^24.7.0"
   }
 }
