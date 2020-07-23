@@ -42,4 +42,5 @@ exports.extend = extend;
 exports.default = wrapped; // es6 compat
 module.exports = wrapped;
 
+// THIS ENABLES 'setupFilesAfterEnv' in jest config file
 expect.extend({ toBeType });
